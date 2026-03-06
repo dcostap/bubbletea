@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"charm.land/bubbles/v2/viewport"
-	tea "charm.land/bubbletea/v2"
+	tea "github.com/dcostap/bubbletea/v2"
 	"github.com/charmbracelet/glamour/v2"
 	"github.com/charmbracelet/glamour/v2/styles"
 	"charm.land/lipgloss/v2"

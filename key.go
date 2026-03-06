@@ -3,7 +3,7 @@ package tea
 import (
 	"fmt"
 
-	uv "github.com/charmbracelet/ultraviolet"
+	uv "github.com/dcostap/ultraviolet"
 )
 
 const (

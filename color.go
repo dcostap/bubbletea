@@ -3,7 +3,7 @@ package tea
 import (
 	"image/color"
 
-	uv "github.com/charmbracelet/ultraviolet"
+	uv "github.com/dcostap/ultraviolet"
 )
 
 // backgroundColorMsg is a message that requests the terminal background color.

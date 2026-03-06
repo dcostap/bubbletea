@@ -8,7 +8,7 @@ import (
 	"charm.land/bubbles/v2/help"
 	"charm.land/bubbles/v2/key"
 	"charm.land/bubbles/v2/stopwatch"
-	tea "charm.land/bubbletea/v2"
+	tea "github.com/dcostap/bubbletea/v2"
 )
 
 type model struct {

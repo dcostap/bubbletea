@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	tea "charm.land/bubbletea/v2"
+	tea "github.com/dcostap/bubbletea/v2"
 )
 
 type model struct {

@@ -4,11 +4,11 @@ go 1.24.2
 
 toolchain go1.24.10
 
-require charm.land/bubbletea/v2 v2.0.0-00010101000000-000000000000
+require github.com/dcostap/bubbletea/v2 v2.0.0-00010101000000-000000000000
 
 require (
 	github.com/charmbracelet/colorprofile v0.4.1 // indirect
-	github.com/charmbracelet/ultraviolet v0.0.0-20260205113103-524a6607adb8 // indirect
+	github.com/dcostap/ultraviolet v0.0.0-20260205113103-524a6607adb8 // indirect
 	github.com/charmbracelet/x/ansi v0.11.6 // indirect
 	github.com/charmbracelet/x/term v0.2.2 // indirect
 	github.com/charmbracelet/x/termios v0.1.1 // indirect
@@ -26,4 +26,4 @@ require (
 	golang.org/x/sys v0.40.0 // indirect
 )
 
-replace charm.land/bubbletea/v2 => ../
+replace github.com/dcostap/bubbletea/v2 => ../

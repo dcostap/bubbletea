@@ -10,7 +10,7 @@ import (
 	"sync"
 
 	"github.com/charmbracelet/colorprofile"
-	uv "github.com/charmbracelet/ultraviolet"
+	uv "github.com/dcostap/ultraviolet"
 	"github.com/charmbracelet/x/ansi"
 	"github.com/lucasb-eyer/go-colorful"
 )

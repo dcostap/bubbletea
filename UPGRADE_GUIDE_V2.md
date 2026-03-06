@@ -32,7 +32,7 @@ import tea "github.com/charmbracelet/bubbletea"
 import "github.com/charmbracelet/lipgloss"
 
 // After
-import tea "charm.land/bubbletea/v2"
+import tea "github.com/dcostap/bubbletea/v2"
 import "charm.land/lipgloss/v2"
 ```
 
@@ -410,7 +410,7 @@ import (
     "fmt"
     "os"
 
-    tea "charm.land/bubbletea/v2"
+    tea "github.com/dcostap/bubbletea/v2"
 )
 
 type model struct {
@@ -464,7 +464,7 @@ A flat old → new lookup table. Handy for search-and-replace and LLM-assisted m
 
 | v1 | v2 |
 |---|---|
-| `github.com/charmbracelet/bubbletea` | `charm.land/bubbletea/v2` |
+| `github.com/charmbracelet/bubbletea` | `github.com/dcostap/bubbletea/v2` |
 | `github.com/charmbracelet/lipgloss` | `charm.land/lipgloss/v2` |
 
 ### Model Interface

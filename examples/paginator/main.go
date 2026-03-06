@@ -11,7 +11,7 @@ import (
 	"charm.land/bubbles/v2/paginator"
 	"charm.land/lipgloss/v2"
 
-	tea "charm.land/bubbletea/v2"
+	tea "github.com/dcostap/bubbletea/v2"
 )
 
 type styles struct {

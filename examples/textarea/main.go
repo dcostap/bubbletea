@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"charm.land/bubbles/v2/textarea"
-	tea "charm.land/bubbletea/v2"
+	tea "github.com/dcostap/bubbletea/v2"
 	"charm.land/lipgloss/v2"
 )
 

@@ -3,7 +3,7 @@ package main
 import (
 	"charm.land/bubbles/v2/key"
 	"charm.land/bubbles/v2/list"
-	tea "charm.land/bubbletea/v2"
+	tea "github.com/dcostap/bubbletea/v2"
 )
 
 func newItemDelegate(keys *delegateKeyMap, styles *styles) list.DefaultDelegate {

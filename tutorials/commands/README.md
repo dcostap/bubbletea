@@ -26,7 +26,7 @@ import (
     "os"
     "time"
 
-    tea "charm.land/bubbletea/v2"
+    tea "github.com/dcostap/bubbletea/v2"
 )
 
 const url = "https://charm.sh/"
@@ -221,7 +221,7 @@ a component library for Bubble Tea.
 And, of course, check out the [Go Docs][docs].
 
 [bubbles]: https://github.com/charmbracelet/bubbles
-[docs]: https://pkg.go.dev/charm.land/bubbletea/v2?tab=doc
+[docs]: https://pkg.go.dev/github.com/dcostap/bubbletea/v2?tab=doc
 [examples]: https://github.com/charmbracelet/bubbletea/tree/master/examples
 
 ## Additional Resources

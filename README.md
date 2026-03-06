@@ -3,7 +3,7 @@
 <p>
     <img src="https://github.com/user-attachments/assets/ad408275-8799-488f-9303-441e7f869535" width="350"><br>
     <a href="https://github.com/charmbracelet/bubbletea/releases"><img src="https://img.shields.io/github/release/charmbracelet/bubbletea.svg" alt="Latest Release"></a>
-    <a href="https://pkg.go.dev/charm.land/bubbletea/v2?tab=doc"><img src="https://godoc.org/charm.land/bubbletea/v2?status.svg" alt="GoDoc"></a>
+    <a href="https://pkg.go.dev/github.com/dcostap/bubbletea/v2?tab=doc"><img src="https://godoc.org/github.com/dcostap/bubbletea/v2?status.svg" alt="GoDoc"></a>
     <a href="https://github.com/charmbracelet/bubbletea/actions"><img src="https://github.com/charmbracelet/bubbletea/actions/workflows/build.yml/badge.svg?branch=main" alt="Build Status"></a>
 </p>
 
@@ -72,7 +72,7 @@ import (
     "fmt"
     "os"
 
-    tea "charm.land/bubbletea/v2"
+    tea "github.com/dcostap/bubbletea/v2"
 )
 ```
 
@@ -265,7 +265,7 @@ there are [Go Docs][docs].
 
 [cmd]: https://github.com/charmbracelet/bubbletea/tree/main/tutorials/commands/
 [examples]: https://github.com/charmbracelet/bubbletea/tree/main/examples
-[docs]: https://pkg.go.dev/charm.land/bubbletea/v2?tab=doc
+[docs]: https://pkg.go.dev/github.com/dcostap/bubbletea/v2?tab=doc
 
 ## Debugging
 

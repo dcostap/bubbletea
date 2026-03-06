@@ -1,7 +1,7 @@
 package tea
 
 import (
-	uv "github.com/charmbracelet/ultraviolet"
+	uv "github.com/dcostap/ultraviolet"
 )
 
 // translateInputEvent translates an input event into a Bubble Tea Msg.

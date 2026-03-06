@@ -26,7 +26,7 @@ import (
     "fmt"
     "os"
 
-    tea "charm.land/bubbletea/v2"
+    tea "github.com/dcostap/bubbletea/v2"
 )
 ```
 
@@ -218,7 +218,7 @@ there are [Go Docs][docs].
 
 [cmd]: http://github.com/charmbracelet/bubbletea/tree/master/tutorials/commands/
 [examples]: http://github.com/charmbracelet/bubbletea/tree/master/examples
-[docs]: https://pkg.go.dev/charm.land/bubbletea/v2?tab=doc
+[docs]: https://pkg.go.dev/github.com/dcostap/bubbletea/v2?tab=doc
 
 ## Additional Resources
 

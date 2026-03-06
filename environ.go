@@ -1,6 +1,6 @@
 package tea
 
-import uv "github.com/charmbracelet/ultraviolet"
+import uv "github.com/dcostap/ultraviolet"
 
 // EnvMsg is a message that represents the environment variables of the
 // program. This is useful for getting the environment variables of programs

@@ -22,7 +22,7 @@ require (
 	github.com/charmbracelet/x/windows v0.2.2 // indirect
 	github.com/clipperhouse/displaywidth v0.11.0 // indirect
 	github.com/clipperhouse/uax29/v2 v2.7.0 // indirect
-	github.com/dcostap/ultraviolet v0.0.0-20260309133240-a8c8247e30fa
+	github.com/dcostap/ultraviolet v0.0.0-20260309141110-09aaf8db9f1b
 	github.com/mattn/go-runewidth v0.0.20 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect

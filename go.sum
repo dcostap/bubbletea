@@ -26,6 +26,8 @@ github.com/dcostap/ultraviolet v0.0.0-20260309141110-09aaf8db9f1b h1:5t+TCT+sc5T
 github.com/dcostap/ultraviolet v0.0.0-20260309141110-09aaf8db9f1b/go.mod h1:Eu9T1QBJEFNr2Q+OL5FlYP45O3aEj4mm6rybhVUwvKk=
 github.com/dcostap/ultraviolet v0.0.0-20260309141847-30bbc5a128c5 h1:8kdBt7VXur4ivzJgHcBrB9Q2gmEVe4BXW0lUKRxC0Xo=
 github.com/dcostap/ultraviolet v0.0.0-20260309141847-30bbc5a128c5/go.mod h1:Eu9T1QBJEFNr2Q+OL5FlYP45O3aEj4mm6rybhVUwvKk=
+github.com/dcostap/ultraviolet v0.0.0-20260309145007-6c1f9b477d87 h1:S/z8RmCfXkm75zZQ6kOGW8y/QNclz3kTfUl6kneOz4Q=
+github.com/dcostap/ultraviolet v0.0.0-20260309145007-6c1f9b477d87/go.mod h1:Eu9T1QBJEFNr2Q+OL5FlYP45O3aEj4mm6rybhVUwvKk=
 github.com/lucasb-eyer/go-colorful v1.3.0 h1:2/yBRLdWBZKrf7gB40FoiKfAWYQ0lqNcbuQwVHXptag=
 github.com/lucasb-eyer/go-colorful v1.3.0/go.mod h1:R4dSotOR9KMtayYi1e77YzuveK+i7ruzyGqttikkLy0=
 github.com/mattn/go-runewidth v0.0.20 h1:WcT52H91ZUAwy8+HUkdM3THM6gXqXuLJi9O3rjcQQaQ=

@@ -51,6 +51,20 @@ func TestWindowsPasteBurstPreservesSingleKey(t *testing.T) {
 	}
 }
 
+func TestWindowsPasteBurstPreservesSingleEnter(t *testing.T) {
+	var burst windowsPasteBurst
+	now := time.Unix(0, 0)
+
+	got := burst.Push(KeyPressMsg{Code: KeyEnter}, now)
+	want := []Msg{
+		KeyPressMsg{Code: KeyEnter},
+	}
+
+	if !reflect.DeepEqual(got, want) {
+		t.Fatalf("unexpected single-enter push:\nwant: %#v\ngot:  %#v", want, got)
+	}
+}
+
 func TestWindowsPasteBurstFlushesBeforeUnrelatedMsg(t *testing.T) {
 	var burst windowsPasteBurst
 	now := time.Unix(0, 0)

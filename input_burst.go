@@ -24,7 +24,7 @@ type windowsPasteBurst struct {
 
 func (b *windowsPasteBurst) Push(msg Msg, now time.Time) []Msg {
 	if !b.active {
-		text, ok := pasteBurstText(msg)
+		text, ok := pasteBurstStartText(msg)
 		if !ok {
 			return []Msg{msg}
 		}
@@ -32,7 +32,7 @@ func (b *windowsPasteBurst) Push(msg Msg, now time.Time) []Msg {
 		return nil
 	}
 
-	if text, ok := pasteBurstText(msg); ok {
+	if text, ok := pasteBurstContinueText(msg); ok {
 		b.buffered = append(b.buffered, msg)
 		b.appendText(text)
 		b.extend(now)
@@ -121,13 +121,24 @@ func (b *windowsPasteBurst) flushLocked() []Msg {
 	return out
 }
 
-func pasteBurstText(msg Msg) (string, bool) {
-	key, ok := msg.(KeyPressMsg)
+func pasteBurstStartText(msg Msg) (string, bool) {
+	key, ok := pasteBurstKeyPress(msg)
+	if !ok || key.Text == "" {
+		return "", false
+	}
+	return key.Text, true
+}
+
+func pasteBurstContinueText(msg Msg) (string, bool) {
+	key, ok := pasteBurstKeyPress(msg)
 	if !ok {
 		return "", false
 	}
 	if key.Text != "" {
 		return key.Text, true
+	}
+	if key.Mod != 0 {
+		return "", false
 	}
 	switch key.Code {
 	case KeyEnter, KeyKpEnter:
@@ -135,6 +146,14 @@ func pasteBurstText(msg Msg) (string, bool) {
 	default:
 		return "", false
 	}
+}
+
+func pasteBurstKeyPress(msg Msg) (KeyPressMsg, bool) {
+	key, ok := msg.(KeyPressMsg)
+	if !ok {
+		return KeyPressMsg{}, false
+	}
+	return key, true
 }
 
 func isPasteBurstAuxiliaryMsg(msg Msg) bool {

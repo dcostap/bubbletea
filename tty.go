@@ -5,8 +5,8 @@ import (
 	"os"
 	"time"
 
-	uv "github.com/dcostap/ultraviolet"
 	"github.com/charmbracelet/x/term"
+	uv "github.com/dcostap/ultraviolet"
 )
 
 func (p *Program) suspend() {
@@ -84,11 +84,90 @@ func (p *Program) initInputReader(cancel bool) error {
 func (p *Program) readLoop() {
 	defer close(p.readLoopDone)
 
-	if err := p.inputScanner.StreamEvents(p.ctx, p.msgs); err != nil {
+	eventc := make(chan uv.Event)
+	errc := make(chan error, 1)
+	go func() {
+		defer close(eventc)
+		if err := p.inputScanner.StreamEvents(p.ctx, eventc); err != nil {
+			errc <- err
+		}
+		close(errc)
+	}()
+
+	var burst windowsPasteBurst
+	var timer *time.Timer
+	var timerc <-chan time.Time
+	resetTimer := func() {
+		delay, ok := burst.NextDelay(time.Now())
+		if !ok {
+			if timer != nil {
+				if !timer.Stop() {
+					select {
+					case <-timer.C:
+					default:
+					}
+				}
+			}
+			timerc = nil
+			return
+		}
+		if timer == nil {
+			timer = time.NewTimer(delay)
+			timerc = timer.C
+			return
+		}
+		if !timer.Stop() {
+			select {
+			case <-timer.C:
+			default:
+			}
+		}
+		timer.Reset(delay)
+		timerc = timer.C
+	}
+	sendMsgs := func(msgs []Msg) bool {
+		for _, msg := range msgs {
+			select {
+			case <-p.ctx.Done():
+				return false
+			case p.msgs <- msg:
+			}
+		}
+		return true
+	}
+
+	for {
+		resetTimer()
+
 		select {
 		case <-p.ctx.Done():
+			_ = sendMsgs(burst.Flush())
 			return
-		case p.errs <- err:
+		case <-timerc:
+			if !sendMsgs(burst.Flush()) {
+				return
+			}
+		case err, ok := <-errc:
+			if !ok {
+				errc = nil
+				continue
+			}
+			_ = sendMsgs(burst.Flush())
+			select {
+			case <-p.ctx.Done():
+				return
+			case p.errs <- err:
+				return
+			}
+		case ev, ok := <-eventc:
+			if !ok {
+				_ = sendMsgs(burst.Flush())
+				return
+			}
+			msg := p.translateInputEvent(ev)
+			if !sendMsgs(burst.Push(msg, time.Now())) {
+				return
+			}
 		}
 	}
 }
